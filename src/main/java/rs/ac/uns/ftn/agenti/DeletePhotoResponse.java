@@ -10,7 +10,6 @@ package rs.ac.uns.ftn.agenti;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -25,7 +24,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="userWS" type="{http://www.ftn.uns.ac.rs/agenti}userWS"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,37 +33,9 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
-    "userWS"
-})
-@XmlRootElement(name = "loginAgentResponse")
-public class LoginAgentResponse {
+@XmlType(name = "")
+@XmlRootElement(name = "deletePhotoResponse")
+public class DeletePhotoResponse {
 
-    @XmlElement(required = true)
-    protected UserWS userWS;
-
-    /**
-     * Gets the value of the userWS property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link UserWS }
-     *     
-     */
-    public UserWS getUserWS() {
-        return userWS;
-    }
-
-    /**
-     * Sets the value of the userWS property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link UserWS }
-     *     
-     */
-    public void setUserWS(UserWS value) {
-        this.userWS = value;
-    }
 
 }

@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.model.Smestaj;
+import com.example.demo.model.User;
 import com.example.demo.repository.SmestajRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,6 +30,10 @@ public class SmestajService {
             exists = true;
         }
         return exists;
+    }
+    
+    public List<Smestaj> getSmestajByUser(User user){
+    	return smestajRepository.findByAgent(user);
     }
 
 }

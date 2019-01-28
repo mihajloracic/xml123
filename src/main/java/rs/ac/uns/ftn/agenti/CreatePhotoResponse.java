@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="userWS" type="{http://www.ftn.uns.ac.rs/agenti}userWS"/>
+ *         &lt;element name="photo" type="{http://www.ftn.uns.ac.rs/agenti}photoWS"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "userWS"
+    "photo"
 })
-@XmlRootElement(name = "loginAgentResponse")
-public class LoginAgentResponse {
+@XmlRootElement(name = "createPhotoResponse")
+public class CreatePhotoResponse {
 
     @XmlElement(required = true)
-    protected UserWS userWS;
+    protected PhotoWS photo;
 
     /**
-     * Gets the value of the userWS property.
+     * Gets the value of the photo property.
      * 
      * @return
      *     possible object is
-     *     {@link UserWS }
+     *     {@link PhotoWS }
      *     
      */
-    public UserWS getUserWS() {
-        return userWS;
+    public PhotoWS getPhoto() {
+        return photo;
     }
 
     /**
-     * Sets the value of the userWS property.
+     * Sets the value of the photo property.
      * 
      * @param value
      *     allowed object is
-     *     {@link UserWS }
+     *     {@link PhotoWS }
      *     
      */
-    public void setUserWS(UserWS value) {
-        this.userWS = value;
+    public void setPhoto(PhotoWS value) {
+        this.photo = value;
     }
 
 }

@@ -19,8 +19,49 @@
         </xs:sequence>
     </xs:complexType>
     
-
+	<xs:complexType name="photoWS">
+        <xs:sequence>
+            <xs:element name="id" type="xs:long"/>
+            <xs:element name="path" type="xs:string"/>
+            <xs:element name="smestajId" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
     
+    <xs:element name="createPhotoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="photo" type="photoWS"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="createPhotoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="photo" type="xs:string"/>
+                <xs:element name="smestajId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="deletePhotoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+
+	
+    <xs:element name="deletePhotoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+                <xs:element name="smestajId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
     <xs:element name="loginAgentResponse">
         <xs:complexType>
             <xs:sequence>
@@ -29,7 +70,7 @@
         </xs:complexType>
     </xs:element>
     
-        <xs:element name="createSmestajIdRequest">
+    <xs:element name="createSmestajIdRequest">
         <xs:complexType>
             <xs:sequence>
             </xs:sequence>
@@ -43,8 +84,22 @@
         </xs:complexType>
         
     </xs:element>
-    
-        <xs:complexType name="smestajWS">
+        <xs:element name="getSmestajForUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+            	<xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+       <xs:element name="getSmestajForUserResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element minOccurs="0" maxOccurs="unbounded" name="smestajs" type="smestajWS"/>
+            </xs:sequence>
+        </xs:complexType>
+        
+    </xs:element>
+    <xs:complexType name="smestajWS">
         <xs:sequence>
             <xs:element name="id" type="xs:long"/>
             <xs:element name="naziv" type="xs:string"/>
@@ -68,6 +123,20 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="smestajWS" type="smestajWS"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    	<xs:element name="getPhotosForSmestajReuqest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+         <xs:element name="getPhotosForSmestajResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:long"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

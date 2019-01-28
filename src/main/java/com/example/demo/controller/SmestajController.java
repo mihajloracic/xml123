@@ -3,6 +3,9 @@ package com.example.demo.controller;
 import com.example.demo.model.Smestaj;
 import com.example.demo.model.User;
 import com.example.demo.service.SmestajService;
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +27,12 @@ public class SmestajController {
          User authUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
          smestaj.setAgent(authUser);
         return smestajService.addSmestaj(smestaj);
+    }
+    
+    @GetMapping(value="/getAll")
+    public List<Smestaj> getSmestajByUser(){
+    	User authUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    	return smestajService.getSmestajByUser(authUser);
     }
 
 }

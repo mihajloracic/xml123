@@ -34,8 +34,12 @@ public class SmestajPhotoService {
             smestajPhotoRepository.save(s);
         }
     }
-    public void saveSmestajPhoto(SmestajPhoto photo){
-        smestajPhotoRepository.save(photo);
+    public SmestajPhoto saveSmestajPhoto(SmestajPhoto photo){
+        return smestajPhotoRepository.save(photo);
     }
+    
+    
+    
+    
 
 }

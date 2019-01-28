@@ -21,7 +21,6 @@ public class EndpointMapper {
             }
             
         };
-        List<a> data = new ArrayList();
         mapper.addMapping(builder);
     }
 }

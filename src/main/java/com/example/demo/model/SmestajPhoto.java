@@ -26,10 +26,9 @@ public class SmestajPhoto implements Serializable {
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JsonIgnore
     private Smestaj smestaj;
-
+    @Lob
     private String path;
-
-
+    
     public SmestajPhoto(){}
 
     public long getId() {

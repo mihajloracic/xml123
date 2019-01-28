@@ -25,7 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="userWS" type="{http://www.ftn.uns.ac.rs/agenti}userWS"/>
+ *         &lt;element name="photo" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="smestajId" type="{http://www.w3.org/2001/XMLSchema}long"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +37,54 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "userWS"
+    "photo",
+    "smestajId"
 })
-@XmlRootElement(name = "loginAgentResponse")
-public class LoginAgentResponse {
+@XmlRootElement(name = "createPhotoRequest")
+public class CreatePhotoRequest {
 
     @XmlElement(required = true)
-    protected UserWS userWS;
+    protected String photo;
+    protected long smestajId;
 
     /**
-     * Gets the value of the userWS property.
+     * Gets the value of the photo property.
      * 
      * @return
      *     possible object is
-     *     {@link UserWS }
+     *     {@link String }
      *     
      */
-    public UserWS getUserWS() {
-        return userWS;
+    public String getPhoto() {
+        return photo;
     }
 
     /**
-     * Sets the value of the userWS property.
+     * Sets the value of the photo property.
      * 
      * @param value
      *     allowed object is
-     *     {@link UserWS }
+     *     {@link String }
      *     
      */
-    public void setUserWS(UserWS value) {
-        this.userWS = value;
+    public void setPhoto(String value) {
+        this.photo = value;
+    }
+
+    /**
+     * Gets the value of the smestajId property.
+     * 
+     */
+    public long getSmestajId() {
+        return smestajId;
+    }
+
+    /**
+     * Sets the value of the smestajId property.
+     * 
+     */
+    public void setSmestajId(long value) {
+        this.smestajId = value;
     }
 
 }

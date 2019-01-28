@@ -10,7 +10,6 @@ package rs.ac.uns.ftn.agenti;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
@@ -25,7 +24,8 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="userWS" type="{http://www.ftn.uns.ac.rs/agenti}userWS"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}long"/>
+ *         &lt;element name="smestajId" type="{http://www.w3.org/2001/XMLSchema}long"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +36,45 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "userWS"
+    "id",
+    "smestajId"
 })
-@XmlRootElement(name = "loginAgentResponse")
-public class LoginAgentResponse {
+@XmlRootElement(name = "deletePhotoRequest")
+public class DeletePhotoRequest {
 
-    @XmlElement(required = true)
-    protected UserWS userWS;
+    protected long id;
+    protected long smestajId;
 
     /**
-     * Gets the value of the userWS property.
+     * Gets the value of the id property.
      * 
-     * @return
-     *     possible object is
-     *     {@link UserWS }
-     *     
      */
-    public UserWS getUserWS() {
-        return userWS;
+    public long getId() {
+        return id;
     }
 
     /**
-     * Sets the value of the userWS property.
+     * Sets the value of the id property.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link UserWS }
-     *     
      */
-    public void setUserWS(UserWS value) {
-        this.userWS = value;
+    public void setId(long value) {
+        this.id = value;
+    }
+
+    /**
+     * Gets the value of the smestajId property.
+     * 
+     */
+    public long getSmestajId() {
+        return smestajId;
+    }
+
+    /**
+     * Sets the value of the smestajId property.
+     * 
+     */
+    public void setSmestajId(long value) {
+        this.smestajId = value;
     }
 
 }
